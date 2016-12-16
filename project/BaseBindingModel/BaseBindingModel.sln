@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseBindingModel", "BaseBindingModel\BaseBindingModel.csproj", "{8E3DE326-9FA1-4627-828D-6410844DC0E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseBindingModel 4.6", "BaseBindingModel 4.6\BaseBindingModel 4.6.csproj", "{8E3DE326-9FA1-4627-828D-6410844DC0E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseBindingModel 4.5", "BaseBindingModel 4.5\BaseBindingModel 4.5.csproj", "{59F4BE18-5A16-4C00-AC7C-F75722D2B60A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseBindingModel 4.0", "BaseBindingModel 4.0\BaseBindingModel 4.0.csproj", "{9DB424B4-9A9F-4922-B8DF-87B77158CBB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8E3DE326-9FA1-4627-828D-6410844DC0E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E3DE326-9FA1-4627-828D-6410844DC0E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E3DE326-9FA1-4627-828D-6410844DC0E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F4BE18-5A16-4C00-AC7C-F75722D2B60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F4BE18-5A16-4C00-AC7C-F75722D2B60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F4BE18-5A16-4C00-AC7C-F75722D2B60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F4BE18-5A16-4C00-AC7C-F75722D2B60A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DB424B4-9A9F-4922-B8DF-87B77158CBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DB424B4-9A9F-4922-B8DF-87B77158CBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DB424B4-9A9F-4922-B8DF-87B77158CBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB424B4-9A9F-4922-B8DF-87B77158CBB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

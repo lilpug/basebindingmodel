@@ -1,0 +1,5 @@
+C:\Users\lilpug\Desktop\BaseBindingModel\compiled\release\BaseBindingModel.dll
+C:\Users\lilpug\Desktop\BaseBindingModel\BaseBindingModel\BaseBindingModel\obj\Release\BaseBindingModel.csprojResolveAssemblyReference.cache
+C:\Users\lilpug\Desktop\BaseBindingModel\BaseBindingModel\BaseBindingModel\obj\Release\BaseBindingModel.dll
+C:\Users\lilpug\Desktop\BaseBindingModel\project\BaseBindingModel\BaseBindingModel\obj\Release\BaseBindingModel.csprojResolveAssemblyReference.cache
+C:\Users\lilpug\Desktop\BaseBindingModel\project\BaseBindingModel\BaseBindingModel\obj\Release\BaseBindingModel.dll

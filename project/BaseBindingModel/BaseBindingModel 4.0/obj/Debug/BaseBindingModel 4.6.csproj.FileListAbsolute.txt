@@ -1,0 +1,5 @@
+J:\my github\c# libraries\BaseBindingModel\compiled\debug\BaseBindingModel.dll
+J:\my github\c# libraries\BaseBindingModel\compiled\debug\BaseBindingModel.pdb
+J:\my github\c# libraries\BaseBindingModel\project\BaseBindingModel\BaseBindingModel 4.6\obj\Debug\BaseBindingModel 4.6.csprojResolveAssemblyReference.cache
+J:\my github\c# libraries\BaseBindingModel\project\BaseBindingModel\BaseBindingModel 4.6\obj\Debug\BaseBindingModel.dll
+J:\my github\c# libraries\BaseBindingModel\project\BaseBindingModel\BaseBindingModel 4.6\obj\Debug\BaseBindingModel.pdb
