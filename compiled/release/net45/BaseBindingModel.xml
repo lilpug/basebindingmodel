@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BaseBindingModel</name>
+    </assembly>
+    <members>
+        <member name="T:Models.Support.BaseBindingModel">
+            <summary>
+            This is the BaseBindingModel which can be inherited to make model binding much more easier
+            </summary>
+            <summary>
+            This is the BaseBindingModel which can be inherited to make model binding much more easier
+            </summary>
+        </member>
+        <member name="M:Models.Support.BaseBindingModel.Process">
+            <summary>
+            This function processes the data and outputs the results into the results object
+            </summary>
+        </member>
+        <member name="M:Models.Support.BaseBindingModel.AddValidationRule(System.String,System.String)">
+            <summary>
+            This function creates an error list for the name specified if one does not exist and adds the message to the list
+            </summary>
+            <param name="errorName"></param>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="M:Models.Support.BaseBindingModel.InteralProcess">
+            <summary>
+            This function is designed to be overriden and used where your main processing is done after validation has been successful
+            </summary>
+        </member>
+        <member name="M:Models.Support.BaseBindingModel.Validation">
+            <summary>
+            This function is designed to be overriden and used for your validation which is required prior to the internal process running
+            </summary>
+        </member>
+        <member name="P:Models.Support.BaseBindingModel.Results">
+            <summary>
+            Stores all the results from the process
+            </summary>
+        </member>
+        <member name="P:Models.Support.BaseBindingModel.SuccessMessage">
+            <summary>
+            Stores a success message if there is one to be outputted
+            </summary>
+        </member>
+        <member name="F:Models.Support.BaseBindingModel.errors">
+            <summary>
+            Stores the validation messages for each category
+            </summary>
+        </member>
+        <member name="P:Models.Support.BaseBindingModel.GetErrorCount">
+            <summary>
+            This variable loops through the errors dictionary and pulls the error count out
+            </summary>
+        </member>
+        <member name="M:Models.Support.BaseBindingModel.#ctor">
+            <summary>
+            The Constructor method which initialises the resources required
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,22 +1,35 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
+
 namespace Models.Support
 {
+    /// <summary>
+    /// This is the BaseBindingModel which can be inherited to make model binding much more easier
+    /// </summary>
     public partial class BaseBindingModel
     {
         // ====================================// 
         //          Variables Required         //        
         // ====================================//
 
-        //The result output
-        public JObject results = new JObject();
+        /// <summary>
+        /// Stores all the results from the process
+        /// </summary>
+        public HybridDictionary Results { get; set; }
 
-        protected string successMessage { get; set; }
-        
-        //Stores the validation messages for each category
+        /// <summary>
+        /// Stores a success message if there is one to be outputted
+        /// </summary>
+        protected string SuccessMessage { get; set; }
+
+        /// <summary>
+        /// Stores the validation messages for each category
+        /// </summary>
         protected Dictionary<string, List<string>> errors = new Dictionary<string, List<string>>();
 
-        //This variable loops through the errors dictionary and pulls the error count out
+        /// <summary>
+        /// This variable loops through the errors dictionary and pulls the error count out
+        /// </summary>
         protected int GetErrorCount
         {
             get
@@ -28,6 +41,14 @@ namespace Models.Support
                 }                                
                 return errorCounter;
             }
+        }
+
+        /// <summary>
+        /// The Constructor method which initialises the resources required
+        /// </summary>
+        public BaseBindingModel()
+        {
+            Results = new HybridDictionary();
         }
     }
 }

@@ -1,2 +1,0 @@
-J:\my github\c# libraries\BaseBindingModel\compiled\release\4.6\BaseBindingModel.dll
-J:\my github\c# libraries\BaseBindingModel\project\BaseBindingModel\BaseBindingModel 4.6\obj\Release\BaseBindingModel.dll

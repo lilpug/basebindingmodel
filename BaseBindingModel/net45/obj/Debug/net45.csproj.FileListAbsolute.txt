@@ -1,0 +1,7 @@
+J:\my github\c# libraries\BaseBindingModel\compiled\debug\net45\BaseBindingModel.xml
+J:\my github\c# libraries\BaseBindingModel\compiled\debug\net45\BaseBindingModel.dll
+J:\my github\c# libraries\BaseBindingModel\compiled\debug\net45\BaseBindingModel.pdb
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\net45\obj\Debug\net45.csprojResolveAssemblyReference.cache
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\net45\obj\Debug\net45.csproj.CoreCompileInputs.cache
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\net45\obj\Debug\BaseBindingModel.dll
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\net45\obj\Debug\BaseBindingModel.pdb

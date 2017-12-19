@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>BaseBindingModel</AssemblyName>
+    <RootNamespace>BaseBindingModel</RootNamespace>
+    <Version>1.1.0</Version>
+    <Authors>David Whitehead</Authors>
+    <Company>David Whitehead</Company>
+    <Copyright>MIT Copyright © David Whitehead  2016</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/lilpug/basebindingmodel/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/lilpug/basebindingmodel</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lilpug/basebindingmodel</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\compiled\debug\netstandard2.0\netstandard2.0\</OutputPath>
+    <DocumentationFile>..\..\compiled\debug\netstandard2.0\netstandard2.0\BaseBindingModel.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\compiled\release\netstandard2.0\netstandard2.0\</OutputPath>
+    <DocumentationFile>..\..\compiled\release\netstandard2.0\netstandard2.0\BaseBindingModel.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\files\lib\core.cs" Link="lib\core.cs" />
+    <Compile Include="..\..\files\lib\variables.cs" Link="lib\variables.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+
+</Project>

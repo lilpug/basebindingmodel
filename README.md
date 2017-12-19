@@ -1,38 +1,57 @@
 # BaseBindingModel
 
-The BaseBindingModel is a class library that deals with the generic validation and data processing while doing model binding in C# MVC and Aspnet Core.
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square&maxAge=3600)](https://github.com/lilpug/basebindingmodel/raw/master/LICENSE)
+[![GitHub](https://img.shields.io/github/release/lilpug/modframe.svg?style=flat-square&maxAge=3600)](https://github.com/lilpug/basebindingmodel/releases)
+[![NuGet](https://img.shields.io/nuget/v/BaseBindingModel.svg?maxAge=3600)](https://www.nuget.org/packages/BaseBindingModel/)
 
-## Required
-This library requires the json.net library http://www.newtonsoft.com/json
+BaseBindingModel is a library that deals with the generic validation and data processing while doing model binding in C#.NET MVC and ASP.NET Core.
 
 ## Getting Started
-* Download and reference the dll file in compiled folder.
-* Download Json.net and reference it in your project.
+* Download BaseBindingModel from NuGet or reference the DLL file in compiled folder.
 
 ## General Structure
 
-The BaseBindingModel is made up of 2 variables and 1 main function and 3 overridable functions
+The BaseBindingModel is made up of 3 variables, 1 processing function, 1 validation function and 2 overridable functions
 ```c#
-	//This variable is what stores the results to be used after the process() function has been run.
-	public JObject results
+	/// <summary>
+        /// Stores all the results from the process
+        /// </summary>
+        public HybridDictionary Results { get; set; }
 
-	//This variable is an internal variable that is used to store the error list categories
-	protected Dictionary<string, List<string>> errors
+        /// <summary>
+        /// Stores a success message if there is one to be outputted
+        /// </summary>
+        protected string SuccessMessage { get; set; }
+
+        /// <summary>
+        /// Stores the validation messages for each category
+        /// </summary>
+        protected Dictionary<string, List<string>> errors = new Dictionary<string, List<string>>();
 	
-	//This is the main trigger function which sets everything off
-	public void Process()
+	/// <summary>
+        /// This function processes the data and outputs the results into the results object
+        /// </summary>
+        public virtual void Process()
 	
-	//This is where all the main processing should be done
-	protected override void InteralProcess()
+	/// <summary>
+        /// This function creates an error list for the name specified if one does not exist and adds the message to the list
+        /// </summary>
+        /// <param name="errorName"></param>
+        /// <param name="errorMessage"></param>
+        protected virtual void AddValidationRule(string errorName, string errorMessage)
 	
-	//This is where all the validation rules should be done
-	protected override void Validation()
+	/// <summary>
+        /// This function is designed to be overriden and used where your main processing is done after validation has been successful
+        /// </summary>
+        protected virtual void InteralProcess()
 	
-	//This is where the different error categories should be setup
-	protected override void InitErrorCategories()
+	/// <summary>
+        /// This function is designed to be overriden and used for your validation which is required prior to the internal process running
+        /// </summary>
+        protected virtual void Validation()
 ```
 
-##How To Use
+## How To Use
 
 To use simply inherit the BaseBindingModel class into your Model Binding class.
 ```c#
@@ -41,45 +60,34 @@ To use simply inherit the BaseBindingModel class into your Model Binding class.
 	}
 ```
 
-you can then use "InternalProcess", "Validation" and "InitErrorCategories" to process and validate your binding data.
+you can then use "InternalProcess", "Validation" and "AddValidationRule" to process and validate your binding data.
 ```c#
-	public class YourModelBindingClass : BaseBindingModel
+	public class ExampleModel : BaseBindingModel
 	{
-        //Main process which runs
-        protected override void InteralProcess()
-        {
-            using (UserModel user = new UserModel())
-            {
-                if(user.DeleteUser(username))
-                {
-                    //Adds a success message
-                    successMessage = "The account has been successfully deleted.";                    
-                }
-                else
-                {
-                    //Adds a generic error as the process failed
-                    errors["general"].Add("While trying to delete the account the process has failed, please try again.");
-                }
-            }
-        }
+		//Any data binding variables i.e.
+		public string Name { get; set; }
+		public int? Age { get; set; }
 	
-		//This function validates the data
-        protected override void Validation()
-        {
-            if (string.IsNullOrWhiteSpace(username))
-            {
-                errors["username"].Add("No account has been supplied to delete.");
-            }                       
-        }
-
-        //This function inits the error categories
-        protected override void InitErrorCategories()
-        {            
-            errors.Add("general", new List<string>());
-            errors.Add("username", new List<string>());
-        }
+		//Main process which runs
+		protected override void InteralProcess()
+		{
+		    if(true)
+		    {
+				SuccessMessage = "The process has been successfully.";
+		    }
+		    else
+		    {
+				AddValidationRule("processFailure", "this has failed");
+		    }
+		}
 	
-		public string username { get; set; } 
+		protected override void Validation()
+		{
+		    if (string.IsNullOrWhiteSpace("exampleFieldValueSuppliedMaybe?"))
+		    {
+				AddValidationRule("fieldName", "Validation failure message for the field ...");
+		    }                       
+		}    
 	}
 ```
 
@@ -87,13 +95,18 @@ Once your model is ready simply call the process function in your controller and
 ```c#
 	public partial class ExampleController : Controller
     {  
-        public JsonResult UserDelete(DeleteAccount deleteAccount)
+        public IActionResult ExampleAPI(ExampleModel model)
         {
             //Runs the process
-            deleteAccount.Process();
+            model.Process();
 
             //Returns the json results of the action
-            return Json(JsonConvert.SerializeObject(deleteAccount.results));
+			var content = new ContentResult
+			{
+				Content = JsonConvert.SerializeObject(deleteAccount.results, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}),
+				ContentType = "application/json"
+			};
+            return content;
         }
     }
 ```

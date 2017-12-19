@@ -1,0 +1,11 @@
+J:\my github\c# libraries\BaseBindingModel\compiled\release\4.6\BaseBindingModel.xml
+J:\my github\c# libraries\BaseBindingModel\compiled\release\4.6\BaseBindingModel.dll
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\BaseBindingModel\BaseBindingModel 4.6\obj\Release\net46.csproj.CoreCompileInputs.cache
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\BaseBindingModel\BaseBindingModel 4.6\obj\Release\BaseBindingModel.dll
+J:\my github\c# libraries\compiled\release\net46\BaseBindingModel.xml
+J:\my github\c# libraries\compiled\release\net46\BaseBindingModel.dll
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\net46\obj\Release\net46.csproj.CoreCompileInputs.cache
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\net46\obj\Release\BaseBindingModel.dll
+J:\my github\c# libraries\BaseBindingModel\compiled\release\net46\BaseBindingModel.xml
+J:\my github\c# libraries\BaseBindingModel\compiled\release\net46\BaseBindingModel.dll
+J:\my github\c# libraries\BaseBindingModel\BaseBindingModel\net46\obj\Release\net46.csprojResolveAssemblyReference.cache
